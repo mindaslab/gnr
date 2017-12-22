@@ -24,4 +24,21 @@ class TestStore < Minitest::Test
     retrieved_value = store.get(key)
     assert_equal(value, retrieved_value)
   end
+
+  def test_should_repond_to_getting_file_path
+    store = Store.new
+    assert_respond_to store, :file_path
+  end
+
+  def test_should_respond_to_del
+    store = Store.new
+    assert_respond_to store, :del
+  end
+
+  def test_del_should_delete_key
+    store = Store.new
+    store.set('name', 'Karthik')
+    store.del('name')
+    assert_nil(store.get('name'))
+  end
 end

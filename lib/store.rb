@@ -1,4 +1,6 @@
 class Store
+  attr_accessor :file_path
+
   def initialize
     @hash = {}
   end
@@ -9,6 +11,10 @@ class Store
 
   def get(key)
     @hash[key]
+  end
+
+  def del(key)
+    @hash[key] = nil
   end
 
   def save
