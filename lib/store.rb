@@ -14,7 +14,7 @@ class Store
   end
 
   def del(key)
-    # @hash[key] = nil
+    @hash[key] = nil
   end
 
   def save
